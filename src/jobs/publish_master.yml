@@ -8,11 +8,11 @@ steps:
 - setup_build_environment
 - publish_images:
     registry: docker.io
-    organization: prom
+    organization: DOCKER_REPO
     login_variable: DOCKER_LOGIN
     password_variable: DOCKER_PASSWORD
 - publish_images:
     registry: quay.io
-    organization: prometheus
+    organization: QUAY_REPO
     login_variable: QUAY_LOGIN
     password_variable: QUAY_PASSWORD
