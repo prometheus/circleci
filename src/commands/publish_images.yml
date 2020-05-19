@@ -21,7 +21,7 @@ parameters:
   dockerbuild_context:
     description: Path to Dockerbuild context
     type: string
-    default: "./"
+    default: ""
   container_image_name:
     description: Name of the container image
     type: string
