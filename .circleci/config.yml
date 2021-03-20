@@ -19,7 +19,7 @@ workflows:
             - orb-tools/pack
           filters:
             branches:
-              only: master
+              only: circleci-parallel
       - orb-tools/publish:
           orb-ref: prometheus/prometheus@$CIRCLE_TAG
           publish-token-variable: CIRCLECI_API_TOKEN
