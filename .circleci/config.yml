@@ -1,8 +1,7 @@
 version: 2.1
-
 orbs:
   orb-tools: circleci/orb-tools@8.23.1
-
+  prometheus: prometheus/prometheus@0.11.0
 workflows:
   build:
     jobs:
