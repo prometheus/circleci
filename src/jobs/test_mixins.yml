@@ -4,6 +4,7 @@ description: >
 
 executor:
   name: golang
+  version: << parameters.version >>
   resource_class: << parameters.resource_class >>
 
 parameters:
@@ -11,24 +12,25 @@ parameters:
     description: Path to the mixin within the repo.
     default: monitoring-mixin
     type: string
-  mixtool_version:
-    description: The version of github.com/monitoring-mixins/mixtool to install
-    default: latest
-    type: string
-  jsonnetfmt_version:
-    description: The version of github.com/google/go-jsonnet to install
-    default: latest
-    type: string
   resource_class:
     description: Resource class
     type: string
     default: medium
+  version:
+    description: Go version
+    type: string
 
 working_directory: ~/project/<< parameters.mixin_path >>
 
 steps:
 - setup_environment
-- run: go install github.com/monitoring-mixins/mixtool/cmd/mixtool@<< parameters.mixtool_version >>
-- run: go install github.com/google/go-jsonnet/cmd/jsonnetfmt@<< parameters.jsonnetfmt_version >>
+- run: >
+    go install -mod=readonly
+      github.com/google/go-jsonnet/cmd/jsonnet
+      github.com/google/go-jsonnet/cmd/jsonnetfmt
+      github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
+      github.com/prometheus/prometheus/cmd/promtool
+- run: make clean
+- run: jb install
 - run: make
 - run: git diff --exit-code
