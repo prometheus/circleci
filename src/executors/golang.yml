@@ -5,9 +5,11 @@ parameters:
   version:
     description: Go version
     type: string
+    default: medium
   resource_class:
     description: Resource class
     type: string
+    default: "1.6"
 
 resource_class: << parameters.resource_class >>
 docker:
