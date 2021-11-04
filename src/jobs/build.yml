@@ -9,12 +9,15 @@ parameters:
     type: integer
     description: The number of builds to run in parallel.
     default: 3
+  promu_opts:
+    type: string
+    description: Additional promu options.
 
 parallelism: << parameters.parallelism >>
 
 steps:
 - setup_environment
-- run: promu crossbuild -v --parallelism $CIRCLE_NODE_TOTAL --parallelism-thread $CIRCLE_NODE_INDEX
+- run: promu crossbuild -v --parallelism $CIRCLE_NODE_TOTAL --parallelism-thread $CIRCLE_NODE_INDEX << parameters.promu_opts >>
 - persist_to_workspace:
     root: .
     paths:
