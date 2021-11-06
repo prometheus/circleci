@@ -12,6 +12,7 @@ parameters:
   promu_opts:
     type: string
     description: Additional promu options.
+    default: ""
 
 parallelism: << parameters.parallelism >>
 
