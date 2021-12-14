@@ -11,6 +11,6 @@ steps:
 - setup_remote_docker:
     version: << parameters.docker_version >>
 - run: docker version
-- run: docker run --privileged linuxkit/binfmt:v0.7
+- run: docker run --privileged linuxkit/binfmt:v0.8
 - attach_workspace:
     at: .
