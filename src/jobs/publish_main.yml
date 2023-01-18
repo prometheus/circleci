@@ -9,7 +9,7 @@ parameters:
   docker_version:
     type: string
     description: Docker version
-    default: 19.03.8
+    default: 20.10.18
   docker_hub_organization:
     type: string
     description: DockerHub organization
