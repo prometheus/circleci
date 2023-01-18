@@ -5,11 +5,11 @@ parameters:
   image:
     type: string
     description: Custom container image.
-    default: circleci/golang
+    default: cimg/go
   docker_version:
     type: string
     description: Docker version
-    default: 19.03.8
+    default: ""
   docker_hub_organization:
     type: string
     description: DockerHub organization
