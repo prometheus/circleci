@@ -5,7 +5,7 @@ parameters:
   image:
     type: string
     description: Custom container image.
-    default: cimg/go
+    default: cimg/go:1.19
   docker_version:
     type: string
     description: Docker version
