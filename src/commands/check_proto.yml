@@ -5,7 +5,7 @@ parameters:
   version:
     description: protoc version
     type: string
-    default: "3.5.1"
+    default: "3.25.8"
 
 steps:
 - run:
