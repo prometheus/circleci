@@ -2,7 +2,7 @@ description: >
   Cross-build and store the binaries for a specific platform regexp.
 
 machine:
-  image: ubuntu-2004:202111-02
+  image: ubuntu-2404:2025.09.1
 
 parameters:
   platform:
